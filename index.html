@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <div class="container-main">
+      <header>
+        <nav>
+          <button class="menu-button">
+            <img src="./images/icon-menu.svg" alt="menu-img" />
+          </button>
+          <img src="./images/logo.svg" alt="logo" class="logo" />
+          <div class="absolute">
+            <button class="close-button">
+              <img src="./images/icon-close.svg" alt="close-img" />
+            </button>
+            <ul class="">
+              <li class="nav-ul-li">
+                <a href="#" class="f-clr-black">Collections</a>
+              </li>
+              <li class="nav-ul-li"><a href="#" class="f-clr-black">Men</a></li>
+              <li class="nav-ul-li">
+                <a href="#" class="f-clr-black">Women</a>
+              </li>
+              <li class="nav-ul-li">
+                <a href="#" class="f-clr-black">About</a>
+              </li>
+              <li class="nav-ul-li">
+                <a href="#" class="f-clr-black">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="user-box">
+          <a href="#" class="cart_a_ref" id="userCart"
+            ><img src="./images/icon-cart.svg" alt="icon-cart" />
+            <span class="cart-count" id="noOfitemOnCart">3</span></a
+          >
+          <div class="cart-details bg-clr-white" id="cartDetails">
+            <div class="cart1">Cart</div>
+            <div class="empty-cart" id="emptyCart">Your cart is empty.</div>
+            <div class="filled-cart" id="filledCart">
+              <div class="filled-cart-itm-1">
+                <img
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt=""
+                  class="p-img"
+                />
+                <div class="cart-display">
+                  <p class="p-name f-clr-Dark-grayish-blue">
+                    Fall Limited Edition sneakers
+                  </p>
+                  <p class="p-price f-clr-Dark-grayish-blue">
+                    $125.00 <span>x </span><span id="totalItemDisplay">3</span>
+                    <span class="f-clr-black" id="totalCostDisplay">$375.00</span>
+                  </p>
+                </div>
+                <button class="d-button bg-clr-white">
+                  <img
+                    src="./images/icon-delete.svg"
+                    alt=""
+                    class="delete-button"
+                  />
+                </button>
+              </div>
+              <button class="Checkout-btn bg-clr-orange f-clr-white">
+                Checkout
+              </button>
+            </div>
+          </div>
+
+          <a href="#" class="avatar-a"
+            ><img
+              src="./images/image-avatar.png"
+              alt="image-avatar"
+              class="image-avatar"
+          /></a>
+        </div>
+      </header>
+
+      <main>
+        <section class="product-display-box">
+          <div class="mobile-view">
+            <button class="btn-pevious btn bg-clr-white">
+              <img src="./images/icon-previous.svg" alt="" />
+            </button>
+            <img
+              src="./images/image-product-1.jpg"
+              alt=""
+              class="product-display-mobile"
+            />
+            <button class="btn-next btn bg-clr-white">
+              <img src="./images/icon-next.svg" alt="" />
+            </button>
+          </div>
+          <div class="desktop-view">
+            <img
+              src="./images/image-product-1.jpg"
+              alt=""
+              width="450"
+              height="100"
+              decoding="async"
+              class="product-display-desktop"
+              srcset="
+                ./images/image-product-1.jpg 1025w,
+                ./images/image-product-1.jpg 1440w
+              "
+              sizes="(min-width: 64.05em) 40vw, 100vw"
+            />
+            <div class="product-thumbnail-box">
+              <a href="#"
+                ><img src="./images/image-product-1-thumbnail.jpg" alt="" /></a
+              ><a href="#"
+                ><img src="./images/image-product-2-thumbnail.jpg" alt="" /></a
+              ><a href="#"
+                ><img src="./images/image-product-3-thumbnail.jpg" alt="" /></a
+              ><a href="#"
+                ><img src="./images/image-product-4-thumbnail.jpg" alt=""
+              /></a>
+            </div>
+          </div>
+        </section>
+        <section class="product-details">
+          <div class="product-box">
+            <p class="f-clr-orange company-name">SNEAKER COMPANY</p>
+
+            <h1 class="product-name">Fall Limited Edition Sneakers</h1>
+            <p class="product-description f-clr-Dark-grayish-blue">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they'll withstand
+              everything the weather can offer.
+            </p>
+          </div>
+          <div class="pricing-box">
+            <div class="current-price">
+              <h1>$125.00</h1>
+              <p class="discount-percentage f-clr-orange bg-clr-Pale-orange">
+                50%
+              </p>
+            </div>
+            <p class="f-clr-Dark-grayish-blue discount-price">
+              <del>$250.00</del>
+            </p>
+          </div>
+          <div class="cart-box">
+            <div class="count-of-product bg-clr-Light-grayish-blue">
+              <button
+                class="bg-clr-Light-grayish-blue minus-button"
+                id="productCountMinus"
+                disabled
+              >
+                <img src="./images/icon-minus.svg" alt="" />
+              </button>
+              <p id="productCountDisplay">0</p>
+              <button
+                class="bg-clr-Light-grayish-blue plus-button"
+                id="productCountPlus"
+              >
+                <img src="./images/icon-plus.svg" alt="" />
+              </button>
+            </div>
+
+            <button class="btn-add-to-cart bg-clr-orange" id="addToCart" disabled>
+              <img src="./images/icon-cart.svg" alt="" class="cart-image" />
+              Add to cart
+            </button>
+          </div>
+        </section>
+      </main>
+      <div class="lightbox">
+        <div>
+          <button class="light-box-btn">
+            <img
+              src="./images/icon-close.svg"
+              alt=""
+              class="light-close-button"
+            />
+          </button>
+
+          <button class="light-btn-pevious">
+            <img src="./images/icon-previous.svg" alt="" />
+          </button>
+          <img
+            src="./images/image-product-1.jpg"
+            alt=""
+            class="display-image"
+          />
+          <button class="light-btn-next">
+            <img src="./images/icon-next.svg" alt="" />
+          </button>
+
+          <ul class="lightbox-ul">
+            <li>
+              <a href=""
+                ><img src="./images/image-product-1-thumbnail.jpg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="./images/image-product-2-thumbnail.jpg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="./images/image-product-3-thumbnail.jpg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="./images/image-product-4-thumbnail.jpg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./javascript/index.js"></script>
+  </body>
+</html>

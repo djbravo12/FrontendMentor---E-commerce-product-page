@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import "./css/header.css";
+@import "./css/main.css";
+@import "./css/cart.css";
+@import "./css/lightbox.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+}
+
+.cart-image path {
+  fill: var(--White);
+}
+
+.f-clr-black {
+  color: var(--Black);
+}
+
+.f-clr-orange {
+  color: var(--Orange);
+}
+
+.f-clr-Dark-grayish-blue {
+  color: var(--Dark-grayish-blue);
+}
+
+.f-clr-white {
+  color: var(--White);
+}
+
+.bg-clr-Light-grayish-blue {
+  background-color: var(--Light-grayish-blue);
+}
+
+.bg-clr-orange {
+  background-color: var(--Orange);
+}
+.bg-clr-Pale-orange {
+  background-color: var(--Pale-orange);
+}
+
+.bg-clr-white {
+  background-color: var(--White);
+}
+
+body {
+  min-height: 100vh;
+  /* display: grid; */
+  /* justify-content: center; */
+  /* display: grid; */
+  /* align-items: center; */
+  background-color: var(--White);
+  font-size: 1rem;
+  position: relative;
+}
+
+button {
+  border: none;
+}
+
+.display-block {
+  display: block;
+}
