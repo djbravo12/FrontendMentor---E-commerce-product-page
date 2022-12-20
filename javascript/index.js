@@ -104,6 +104,9 @@ const toggleNavbar = function () {
 menuButton.addEventListener("click", toggleNavbar);
 closeButton.addEventListener("click", toggleNavbar);
 
+
+
+// CAROUSEL JS 
 // mobile view carousel
 
 const carouselTrack = document.querySelector("#carouselTrack");
