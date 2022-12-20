@@ -18,29 +18,33 @@
     <div class="container-main">
       <header>
         <nav>
-          <button class="menu-button">
+          <button class="menu-button" id="menuButton">
             <img src="./images/icon-menu.svg" alt="menu-img" />
           </button>
           <img src="./images/logo.svg" alt="logo" class="logo" />
-          <div class="absolute">
-            <button class="close-button">
-              <img src="./images/icon-close.svg" alt="close-img" />
-            </button>
-            <ul class="">
-              <li class="nav-ul-li">
-                <a href="#" class="f-clr-black">Collections</a>
-              </li>
-              <li class="nav-ul-li"><a href="#" class="f-clr-black">Men</a></li>
-              <li class="nav-ul-li">
-                <a href="#" class="f-clr-black">Women</a>
-              </li>
-              <li class="nav-ul-li">
-                <a href="#" class="f-clr-black">About</a>
-              </li>
-              <li class="nav-ul-li">
-                <a href="#" class="f-clr-black">Contact</a>
-              </li>
-            </ul>
+          <div class="overlayout" id="upperNav">
+            <div class="absolute" id="hideNavbar">
+              <button class="close-button" id="closeButton">
+                <img src="./images/icon-close.svg" alt="close-img" />
+              </button>
+              <ul class="nav-ul">
+                <li class="nav-ul-li">
+                  <a href="#" class="f-clr-black">Collections</a>
+                </li>
+                <li class="nav-ul-li">
+                  <a href="#" class="f-clr-black">Men</a>
+                </li>
+                <li class="nav-ul-li">
+                  <a href="#" class="f-clr-black">Women</a>
+                </li>
+                <li class="nav-ul-li">
+                  <a href="#" class="f-clr-black">About</a>
+                </li>
+                <li class="nav-ul-li">
+                  <a href="#" class="f-clr-black">Contact</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
         <div class="user-box">
@@ -64,7 +68,9 @@
                   </p>
                   <p class="p-price f-clr-Dark-grayish-blue">
                     $125.00 <span>x </span><span id="totalItemDisplay">3</span>
-                    <span class="f-clr-black" id="totalCostDisplay">$375.00</span>
+                    <span class="f-clr-black" id="totalCostDisplay"
+                      >$375.00</span
+                    >
                   </p>
                 </div>
                 <button class="d-button bg-clr-white">
@@ -72,6 +78,7 @@
                     src="./images/icon-delete.svg"
                     alt=""
                     class="delete-button"
+                    id="deleteButton"
                   />
                 </button>
               </div>
@@ -92,16 +99,46 @@
 
       <main>
         <section class="product-display-box">
-          <div class="mobile-view">
-            <button class="btn-pevious btn bg-clr-white">
+          <div class="carousel-mobile">
+            <button
+              class="btn-previous btn bg-clr-white"
+              id="peviousImageSliderBtn"
+            >
               <img src="./images/icon-previous.svg" alt="" />
             </button>
-            <img
-              src="./images/image-product-1.jpg"
-              alt=""
-              class="product-display-mobile"
-            />
-            <button class="btn-next btn bg-clr-white">
+            <div class="carousel__track-container">
+              <ul class="carousel-track" id="carouselTrack">
+                <li class="carousel-slide currentSlide">
+                  <img
+                    class="carousel-images"
+                    src="./images/image-product-1.jpg"
+                    alt=""
+                  />
+                </li>
+                <li class="carousel-slide">
+                  <img
+                    class="carousel-images"
+                    src="./images/image-product-2.jpg"
+                    alt=""
+                  />
+                </li>
+                <li class="carousel-slide">
+                  <img
+                    class="carousel-images"
+                    src="./images/image-product-3.jpg"
+                    alt=""
+                  />
+                </li>
+                <li class="carousel-slide">
+                  <img
+                    class="carousel-images"
+                    src="./images/image-product-4.jpg"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+            <button class="btn-next btn bg-clr-white" id="nextImageSliderBtn">
               <img src="./images/icon-next.svg" alt="" />
             </button>
           </div>
@@ -172,7 +209,11 @@
               </button>
             </div>
 
-            <button class="btn-add-to-cart bg-clr-orange" id="addToCart" disabled>
+            <button
+              class="btn-add-to-cart bg-clr-orange"
+              id="addToCart"
+              disabled
+            >
               <img src="./images/icon-cart.svg" alt="" class="cart-image" />
               Add to cart
             </button>
@@ -180,8 +221,8 @@
         </section>
       </main>
       <div class="lightbox">
-        <div>
-          <button class="light-box-btn">
+        <div class="lightbox-container">
+          <button class="light-box-close-btn" id="desktopCarouselCloseBtn">
             <img
               src="./images/icon-close.svg"
               alt=""
@@ -189,43 +230,88 @@
             />
           </button>
 
-          <button class="light-btn-pevious">
-            <img src="./images/icon-previous.svg" alt="" />
-          </button>
-          <img
-            src="./images/image-product-1.jpg"
-            alt=""
-            class="display-image"
-          />
-          <button class="light-btn-next">
-            <img src="./images/icon-next.svg" alt="" />
-          </button>
+          <div class="image-box">
+            <button
+              class="light-btn-previous lightbox-btn"
+              id="desktopCarouselPreviousBtn"
+            >
+              <img src="./images/icon-previous.svg" alt="" />
+            </button>
+            <ul class="desktop-carousel-track" id="desktopCarouselTrack">
+              <li class="desktop-carousel-slide currentDesktopSlide">
+                <img
+                  class="desktop-carousel-images"
+                  src="./images/image-product-1.jpg"
+                  alt=""
+                />
+              </li>
+              <li class="desktop-carousel-slide">
+                <img
+                  class="desktop-carousel-images"
+                  src="./images/image-product-2.jpg"
+                  alt=""
+                />
+              </li>
+              <li class="desktop-carousel-slide">
+                <img
+                  class="desktop-carousel-images"
+                  src="./images/image-product-3.jpg"
+                  alt=""
+                />
+              </li>
+              <li class="desktop-carousel-slide">
+                <img
+                  class="desktop-carousel-images"
+                  src="./images/image-product-4.jpg"
+                  alt=""
+                />
+              </li>
+            </ul>
+            <button
+              class="light-btn-next lightbox-btn"
+              id="desktopCarouselNextBtn"
+            >
+              <img src="./images/icon-next.svg" alt="" />
+            </button>
+          </div>
 
-          <ul class="lightbox-ul">
-            <li>
+          <ul class="lightbox-thumbnail-ul">
+            <li class="lightbox-thumbnail-li">
               <a href=""
-                ><img src="./images/image-product-1-thumbnail.jpg" alt=""
+                ><img
+                  class="lightbox-thumbnail-image"
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt=""
               /></a>
             </li>
-            <li>
+            <li class="lightbox-thumbnail-li">
               <a href=""
-                ><img src="./images/image-product-2-thumbnail.jpg" alt=""
+                ><img
+                  class="lightbox-thumbnail-image"
+                  src="./images/image-product-2-thumbnail.jpg"
+                  alt=""
               /></a>
             </li>
-            <li>
+            <li class="lightbox-thumbnail-li">
               <a href=""
-                ><img src="./images/image-product-3-thumbnail.jpg" alt=""
+                ><img
+                  class="lightbox-thumbnail-image"
+                  src="./images/image-product-3-thumbnail.jpg"
+                  alt=""
               /></a>
             </li>
-            <li>
+            <li class="lightbox-thumbnail-li">
               <a href=""
-                ><img src="./images/image-product-4-thumbnail.jpg" alt=""
+                ><img
+                  class="lightbox-thumbnail-image"
+                  src="./images/image-product-4-thumbnail.jpg"
+                  alt=""
               /></a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <script src="./javascript/index.js"></script>
+    <script src="./javascript/index.js" type="module"></script>
   </body>
 </html>

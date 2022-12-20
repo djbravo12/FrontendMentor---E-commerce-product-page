@@ -72,7 +72,8 @@
 @media (width >= 426px) {
   .cart-details {
     width: max-content;
-    right: 6%;
+    /* right: 5%; */
+    transform: translateX(5%);
     top: 3.5em;
   }
 

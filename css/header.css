@@ -12,6 +12,7 @@ header {
 .close-button {
   margin-block-end: 2.5em;
 }
+
 nav {
   margin-inline-end: auto;
 }
@@ -40,8 +41,24 @@ ul {
   padding-inline: 1.1em;
   padding-block-start: 0.8em;
   width: 65%;
-  height: 100vh;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--White);
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  /* backdrop-filter: blur(3px); */
+  /* box-shadow: 0 13rem 10rem rgba(0, 0, 0, 0.3); */
+}
+
+.overlayout {
+  display: none;
+  left: 0;
+  top: 0;
   z-index: 1;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1px);
+  width: 100%;
+  height: 100%;
 }
 
 .user-box {
@@ -81,8 +98,19 @@ ul {
   }
 
   header {
-    border-bottom: 1px solid black;
-    height: 10vh;
+    /* height: 10vh; */
+    position: relative;
+    padding-block: 0;
+  }
+
+  header::after,
+  .absolute::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.261);
   }
 
   nav {
@@ -94,6 +122,14 @@ ul {
     display: none;
   }
 
+  .overlayout {
+    display: block;
+    position: static;
+    background-color: hsl(0, 0%, 100%);
+    width: auto;
+    height: auto;
+  }
+
   .absolute {
     display: block;
     position: static;
@@ -101,34 +137,31 @@ ul {
     width: auto;
     height: 100%;
     z-index: 0;
-    border-bottom: 4px solid transparent;
   }
 
-  ul {
+  .nav-ul {
     display: flex;
     text-align: center;
     padding: 0;
     margin-inline-start: 3.5em;
-    /* height: 100%; */
-    border: 4px solid transparent;
+    height: 100%;
+    width: 25rem;
   }
 
   .nav-ul-li + .nav-ul-li {
-    margin-inline-start: calc(0.2em * 9);
-    margin-inline-start: 1.5em;
     margin-block-start: 0;
   }
 
   .nav-ul-li {
     padding-block: 1.3em;
     font-weight: 100;
-    border: 4px solid transparent;
+    flex: 1;
   }
-
+  
   .nav-ul-li a {
+    user-select: none;
     padding-block: 1.3em;
     color: hsl(219, 9%, 45%);
-    border-bottom: 4px solid transparent;
   }
 
   .nav-ul-li a:hover {
@@ -162,10 +195,7 @@ ul {
   .container-main {
     padding-inline: 6em;
   }
-  ul {
+  .nav-ul {
     margin-inline-start: 1em;
-  }
-  .nav-ul-li + .nav-ul-li {
-    margin-inline-start: calc(0.3em * 2);
   }
 } ;

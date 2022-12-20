@@ -1,64 +1,119 @@
+
 .lightbox {
-  background-color: red;
-  width: 100vw;
-  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* padding-block: 3em; */
-  /* background-color: red; */
-  display: none;
-}
-
-.lightbox div {
-  position: relative;
-}
-
-.display-image {
-  max-width: 100%;
-  /* max-width: 400px; */
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  /* backdrop-filter: invert(1%); */
   /* display: none; */
-  /* height: auto; */
-  /* object-fit: fill; */
 }
 
-.lightbox-ul {
-  background-color: peru;
+.lightbox-container {
+  width: 35%;
+  margin: 3em auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-li {
-  list-style: none;
+.image-box {
+  position: relative;
+  width: 100%;
+  height: 27rem;
+  margin-block: 0.5em 2em;
+  /* overflow: hidden; */
 }
 
-.light-box-btn {
-  text-align: right;
-  display: block;
-  margin-inline-start: auto;
-}
-.light-close-button {
+.desktop-carousel-track {
+  /* width: 100%; */
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
 }
 
-.light-btn-next,
-.light-btn-pevious {
+.desktop-carousel-slide {
   position: absolute;
-  top: 40%;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.desktop-carousel-images {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: fill;
+}
+
+/* lightbox buttons start here*/
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  /* transform: translateX(50%); */
+  padding-inline: 0.9em;
+  padding-block: 0.9em 0.6em;
   border-radius: 50%;
 }
 
-.light-btn-pevious {
-  left: -1.5em;
-  padding-inline: 1em 1.1em;
-  padding-block: 1em;
+.light-btn-previous {
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
 }
 
 .light-btn-next {
-  right: -1.5em;
-  padding-inline: 1.1em 1em;
-  padding-block: 1em;
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+}
+
+/* lightbox buttons ends here */
+
+/* lightbox thumbnails start here  */
+
+.lightbox-thumbnail-ul {
+  display: flex;
+  padding-inline: 3em;
+  justify-content: space-between;
+}
+
+.lightbox-thumbnail-li {
+  height: 100%;
+  width: 20%;
+}
+
+.lightbox-thumbnail-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.lightbox-thumbnail-image:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+  /* filter: blur(1px); */
+}
+
+.lightbox-thumbnail-li a:hover {
+  opacity: 0.8;
+}
+
+/* lightbox thumbnails end here */
+
+/* close button */
+
+.light-box-close-btn {
+  text-align: right;
+  cursor: pointer;
+  /* display: inline; */
+  /* width: 5px; */
+  outline: none;
+  border: none;
+  margin-left: auto;
+  background-color: transparent;
+}
+
+.light-close-button {
+  width: 1.1em;
 }
