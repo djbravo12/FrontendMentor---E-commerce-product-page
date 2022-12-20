@@ -104,9 +104,7 @@ const toggleNavbar = function () {
 menuButton.addEventListener("click", toggleNavbar);
 closeButton.addEventListener("click", toggleNavbar);
 
-
-
-// CAROUSEL JS 
+// CAROUSEL JS
 // mobile view carousel
 
 const carouselTrack = document.querySelector("#carouselTrack");
@@ -200,4 +198,15 @@ desktopCarouselPreviousBtn.addEventListener("click", () => {
     prevDesktopSlide
   );
   // alert("heelo");
+});
+
+const desktopCarouselCloseBtn = document.querySelector(
+  "#desktopCarouselCloseBtn"
+);
+
+const lightBox = document.querySelector(".lightbox");
+
+desktopCarouselCloseBtn.addEventListener("click", () => {
+  console.log(lightBox);
+  lightBox.classList.add("desktop-display-none");
 });
